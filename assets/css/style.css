@@ -1,6 +1,18 @@
-body {
-    background-color: #80AB82;
-    color: white;
+/*background*/
+
+html,
+body,
+.box-shadow {
+    background-color: rgb(128, 171, 130);
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+
+.box-shadow {
+    background-image: url(../images/map.jpg);
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(128, 171, 130, 0.95);
 }
 
 /*heading*/
