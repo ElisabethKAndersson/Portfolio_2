@@ -1,6 +1,17 @@
+// DOM Elements
+
+document.addEventListener("DOMContentLoaded", function () {
+    let buttons = document.getElementsByClassName("button");
+}
+const question = document.getElementsByClass("question");
+const alternativeButtons = document.getElementById(AllButtons);
+
+
+
+
 // Questions
 
-let questions = [
+const questions = [
     {
         id: "0"
         question: `Which is the largest country in the world?`,
@@ -20,3 +31,8 @@ let questions = [
         correctAnswer: 'Canberra',
     }
 ];
+
+
+
+
+function runGame();
