@@ -1,38 +1,26 @@
-// DOM Elements
 
-document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.getElementsByClassName("button");
-}
-const question = document.getElementsByClass("question");
-const alternativeButtons = document.getElementById(AllButtons);
-
-
-
-
-// Questions
-
-const questions = [
+questions = [
     {
-        id: "0"
         question: `Which is the largest country in the world?`,
-        answers: ['Canada', 'China', 'Russia'],
-        correctAnswer: 'Russia',
-    }
+        answers: [
+            { text: 'Canada', correctAnswer: false },
+            { text: 'China', correctAnswer: false },
+            { text: 'Russia', correctAnswer: true },
+        ]
+    },
     {
-        id: "1"
         question: `What continent has the most countries?`,
-        answers: ['Africa', 'Europe', 'Asia'],
-        correctAnswer: 'Africa',
-    }
+        answers: [
+            { text: 'Africa', correctAnswer: true },
+            { text: 'Europe', correctAnswer: false },
+            { text: 'Asia', correctAnswer: false },
+        ]
+    },
     {
-        id: "2"
         question: `What is the capital of Australia`,
-        answers: ['Melbourne', 'Sydney', 'Canberra'],
-        correctAnswer: 'Canberra',
-    }
-];
-
-
-
-
-function runGame();
+        answers: [
+            { text: 'Melbourne', correctAnswer: false },
+            { text: 'Sidney', correctAnswer: false },
+            { text: 'Canberra', correctAnswer: true },
+        ]
+    },;

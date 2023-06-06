@@ -54,12 +54,17 @@ header {
     padding: 3px 10px;
 }
 
-button {
+.button {
     min-width: 60%;
-    border: 2px solid #80AB82;
+    border: 4px solid #80AB82;
     padding: 10px;
     margin: 20px;
     border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #7DCD85;
+    color: #ffffff;
 }
 
 .button-text {
@@ -74,4 +79,16 @@ button {
     text-align: left;
     margin-right: 100px;
     padding: 0 50px
+}
+
+#score {
+    color: #778472;
+    padding: 25px 50px;
+}
+
+#next-button {
+    background-color: #7DCD85;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
 }
