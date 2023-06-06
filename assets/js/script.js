@@ -1,58 +1,59 @@
-//Get elements from the DOM
-
-const questions = document.getElementsByClassName('question');
-const answerElement = document.getElementById('allButtons');
-const nextButton = document.getElementById('next-button');
-
 
 //Quiz questions
-questions = [
+const questions = [
     {
         question: `Which is the largest country in the world?`,
         answers: [
-            { text: 'Canada', correctAnswer: false },
-            { text: 'China', correctAnswer: false },
-            { text: 'Russia', correctAnswer: true },
+            { text: 'Canada', correct: false },
+            { text: 'China', correct: false },
+            { text: 'Russia', correct: true },
         ]
     },
     {
         question: `What continent has the most countries?`,
         answers: [
-            { text: 'Africa', correctAnswer: true },
-            { text: 'Europe', correctAnswer: false },
-            { text: 'Asia', correctAnswer: false },
+            { text: 'Africa', correct: true },
+            { text: 'Europe', correct: false },
+            { text: 'Asia', correct: false },
         ]
     },
     {
         question: `What is the capital of Australia`,
         answers: [
-            { text: 'Melbourne', correctAnswer: false },
-            { text: 'Sidney', correctAnswer: false },
-            { text: 'Canberra', correctAnswer: true },
+            { text: 'Melbourne', correct: false },
+            { text: 'Sidney', correct: false },
+            { text: 'Canberra', correct: true },
         ]
     };
 
-    let currentQuestionIndex = 0;
-    let score = 0;
+//Get elements from the DOM
 
-    function runGame() {
-        currentQuestionIndex = 0;
-        score = 0;
-        nextButton.innerHTML = "Next";
-        showQuestion();
-    };
+const questionElement = document.getElementById('question');
+const answerButton = document.getElementById('answer-buttons');
+const nextButton = document.getElementById('next-button');
 
-    function showQuestion() {
-        let currentQuestion = questions[currentQuestionIndex];
-        let questionNumber = currentQuestionIndex + 1;
-        questions.innerHTML = questionNumber + "." + currentQuestion.question;
+let currentQuestionIndex = 0;
+let score = 0;
 
-        currentQuestion.answers.forEach(answer => {
-            const button = document.createElement("button");
-            button.innerHTML = answer.text;
-            button.classList.add("button");
-            answerElement.appendChild(button);
-        });
-    }
+//Start the quiz
+function runGame() {
+    currentQuestionIndex = 0;
+    score = 0;
+    nextButton.innerHTML = "Next";
+    showQuestion();
+}
 
-    runGame();
+function showQuestion() {
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerButton.appendChild(button);
+    });
+}
+
+runGame();
