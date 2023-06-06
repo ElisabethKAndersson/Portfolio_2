@@ -1,4 +1,11 @@
+//Get elements from the DOM
 
+const questions = document.getElementsByClassName('question');
+const answerElement = document.getElementById('allButtons');
+const nextButton = document.getElementById('next-button');
+
+
+//Quiz questions
 questions = [
     {
         question: `Which is the largest country in the world?`,
@@ -23,4 +30,5 @@ questions = [
             { text: 'Sidney', correctAnswer: false },
             { text: 'Canberra', correctAnswer: true },
         ]
-    },;
+    };
+
