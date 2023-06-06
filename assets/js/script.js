@@ -41,3 +41,18 @@ questions = [
         nextButton.innerHTML = "Next";
         showQuestion();
     };
+
+    function showQuestion() {
+        let currentQuestion = questions[currentQuestionIndex];
+        let questionNumber = currentQuestionIndex + 1;
+        questions.innerHTML = questionNumber + "." + currentQuestion.question;
+
+        currentQuestion.answers.forEach(answer => {
+            const button = document.createElement("button");
+            button.innerHTML = answer.text;
+            button.classList.add("button");
+            answerElement.appendChild(button);
+        });
+    }
+
+    runGame();
