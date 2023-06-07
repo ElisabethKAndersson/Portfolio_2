@@ -46,18 +46,6 @@ const questions = [
 
 ];
 
-const facts = [{
-    fact: 'Russia covers an area of 17 100 000 km2'
-},
-{
-    fact: 'There are 54 countries in Africa'
-},
-{
-    fact: `Canberra is Australia's largest inland city and the eighth largest Australian city overall.`
-},
-
-
-];
 
 //Get elements from the DOM
 
