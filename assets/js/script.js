@@ -1,30 +1,37 @@
+/*This quiz has been made with support of following tutorial: 
+https://www.codingninjas.com/codestudio/library/how-to-create-a-javascript-quiz-code */
+
 const allQuestions = [
     {
-        question: `Which is the largest country in the world?`,
-        answers: {
-            a: 'Canada',
-            b: 'China',
-            c: 'Russia'
-        },
-        correctAnswer: 'c'
+        question: `Russia is the largest country in the world.`,
+        answers: [
+            { option: 'TRUE', answer: true },
+            { option: 'FALSE', answer: false }
+        ]
     },
     {
-        question: `What continent has the most countries?`,
-        answers: {
-            a: 'Africa',
-            b: 'Europe',
-            c: 'Asia'
-        },
-        correctAnswer: 'a'
+        question: `Europe is the continent with the most countries.`,
+        answers: [
+            { option: 'TRUE', answer: false },
+            { option: 'FALSE', answer: true }
+        ]
     },
+    {
+        question: `Sydney is the Capital of Australia.`,
+        answers: [
+            { option: 'TRUE', answer: false },
+            { option: 'FALSE', answer: true }
+        ]
+    },
+
     {
         question: `What is the capital of Australia?`,
         answers: {
             a: 'Melbourne',
             b: 'Sidney',
-            c: 'Canberra'
+            c: 'Canberra';
         },
-        correctAnswer: 'c'
+        correctAnswer: 'c';
     }
 ];
 
@@ -36,3 +43,7 @@ const trueBtn = getElementById = ('true');
 const falseBtn = getElementById = ('false');
 const userScore = getElementById = ('user - score');
 const questionText = getElementById = ('question');
+
+let currentQuestion = 0;
+let score = 0;
+
