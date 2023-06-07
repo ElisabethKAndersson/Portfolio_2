@@ -67,6 +67,9 @@ header {
     padding: 10px;
     margin: 20px;
     border-radius: 5px;
+    font-size: 16px;
+    font-family: "Kanit",
+        sans-serif;
 }
 
 .btn:hover {
@@ -80,13 +83,6 @@ header {
     font-size: 16px;
 }
 
-/* Leaderboard */
-.leader {
-    max-width: 700px;
-    text-align: left;
-    margin-right: 100px;
-    padding: 0 50px
-}
 
 .score {
     color: white;
@@ -111,6 +107,8 @@ header {
     background: #b44040;
 }
 
-.hide {
-    display: none;
-}
+
+
+/* for smaller screens 650px and down */
+
+@media screen and (max-width: 650px) {
