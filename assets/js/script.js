@@ -35,7 +35,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
         let output = [];
         let answers;
 
-        for (var i = 0; i < questions.length; i++) {
+        for (let i = 0; i < questions.length; i++) {
 
             answers = [];
 
@@ -73,4 +73,4 @@ showQuestions(questions, quizContainer);
 submitButton.onclick = function () {
     showResults(questions, quizContainer, resultsContainer);
 };
-}
+const; 

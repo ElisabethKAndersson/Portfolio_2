@@ -81,12 +81,14 @@ header {
     padding: 0 50px
 }
 
-#score {
-    color: #778472;
-    padding: 25px 50px;
+.score {
+    color: white;
+    padding: 25px 0px;
+    margin-right: 300px;
+    text-align: left;
 }
 
-#next-button {
+.control-btn {
     background-color: #7DCD85;
     padding: 10px;
     margin: 20px;
@@ -100,4 +102,8 @@ header {
 
 .incorrect {
     background: #b44040;
+}
+
+.hide {
+    display: none;
 }
