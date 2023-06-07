@@ -1,4 +1,4 @@
-const questions = [
+const allQuestions = [
     {
         question: `Which is the largest country in the world?`,
         answers: {
@@ -28,7 +28,49 @@ const questions = [
     }
 ];
 
-function runGame(questions, quizContainer) {
-    let output = [];
-    let answers;
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton) {
+
+    function showQuestions(questions, quizContainer) {
+
+        let output = [];
+        let answers;
+
+        for (var i = 0; i < questions.length; i++) {
+
+            answers = [];
+
+            for (letter in questions[i].answers) {
+
+                answers.push(
+                    '<label>'
+                    + '<input type="radio" name="question' + i + '" value="' + letter + '">'
+                    + letter + ': '
+                    + questions[i].answers[letter]
+                    + '</label>'
+                );
+            }
+
+            output.push(
+                '<div class="question">' + questions[i].question + '</div>'
+                + '<div class="answers">' + answers.join('') + '</div>'
+            );
+        }
+
+        quizContainer.innerHTML = output.join('');
+    }
+
+}
+showQuestions(questions, quizContainer);
+
+function showResults(questions, quizContainer, resultsContainer) {
+    // code will go here
+}
+
+// show the questions
+showQuestions(questions, quizContainer);
+
+// when user clicks submit, show results
+submitButton.onclick = function () {
+    showResults(questions, quizContainer, resultsContainer);
+};
 }
