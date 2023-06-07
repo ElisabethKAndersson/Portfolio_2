@@ -1,3 +1,5 @@
+/*The quiz is made with the help of this tutorial https://www.youtube.com/watch?v=PBcqGxrr9g8
+and modified to fit my vision */
 
 //Quiz questions
 const questions = [
@@ -45,7 +47,7 @@ function runGame() {
     showQuestion();
 }
 
-
+//Question and answers
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
