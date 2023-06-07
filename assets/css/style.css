@@ -92,3 +92,11 @@ header {
     margin: 20px;
     border-radius: 5px;
 }
+
+.correct {
+    background: #7DCD85;
+}
+
+.incorrect {
+    background: #b44040;
+}
