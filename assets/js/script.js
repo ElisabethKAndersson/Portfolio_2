@@ -45,11 +45,12 @@ function runGame() {
     showQuestion();
 }
 
+
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+    questionElement.innerHTML = currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
@@ -60,6 +61,8 @@ function showQuestion() {
             button.dataset.correct = answer.correct;
         }
         button.addEventListener("click", selectAnswer);
+
+
     });
 }
 
@@ -89,15 +92,15 @@ function selectAnswer(e) {
 
 function showScore() {
     resetState();
-    questionElement.innerHTML = `Score: ${score;
-} out of ${ questions.length; } `;
-nextButton.innerHTML = "Play Again";
-nextButton.style.display = "block";
+    questionElement.innerHTML = `Score: ${score
+        } `;
+    nextButton.innerHTML = "Play Again";
+    nextButton.style.display = "block";
 }
 
 function handleNextButton() {
     currentQuestionIndex++;
-    if (currentQuestionIndex < question.length) {
+    if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
         showScore();
@@ -105,11 +108,11 @@ function handleNextButton() {
 }
 
 nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < question.length) {
+    if (currentQuestionIndex < questions.length) {
         handleNextButton();
     } else {
-        startQuiz();
+        runGame();
     }
 });
 
-runGame();;
+runGame();
