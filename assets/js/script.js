@@ -1,90 +1,153 @@
-/*This quiz has been made with support of following tutorial: 
-https://www.codingninjas.com/codestudio/library/how-to-create-a-javascript-quiz-code */
+/*The quiz is made with the help of this tutorial https://www.youtube.com/watch?v=PBcqGxrr9g8
+and modified to fit my vision */
 
-
-//Get Elements from DOM
-const nextBtn = getElementById = ('next-button');
-const submitBtn = getElementsById = ('submit-button');
-const restartBtn = getElementById = ('restart-button');
-const trueBtn = getElementById = ('true');
-const falseBtn = getElementById = ('false');
-const userScore = getElementById = ('user-score');
-const questionText = getElementById = ('question-text');
-
-let currentQuestion = 0;
-let score = 0;
-
+//Quiz questions
 const questions = [
     {
-        question: `Russia is the largest country in the world.`,
+        question: `Which is the largest country in the world?`,
         answers: [
-            { option: 'TRUE', answer: true },
-            { option: 'FALSE', answer: false }
+            { text: 'Canada', correct: false },
+            { text: 'China', correct: false },
+            { text: 'Russia', correct: true },
         ]
     },
     {
-        question: `Europe is the continent with the most countries.`,
+        question: `What continent has the most countries?`,
         answers: [
-            { option: 'TRUE', answer: false },
-            { option: 'FALSE', answer: true }
+            { text: 'Africa', correct: true },
+            { text: 'Europe', correct: false },
+            { text: 'Asia', correct: false },
         ]
     },
     {
-        question: `Sydney is the Capital of Australia.`,
+        question: `What is the capital of Australia`,
         answers: [
-            { option: 'TRUE', answer: false },
-            { option: 'FALSE', answer: true }
+            { text: 'Melbourne', correct: false },
+            { text: 'Sidney', correct: false },
+            { text: 'Canberra', correct: true },
+        ]
+    },
+    {
+        question: `Which country has the smallest population?`,
+        answers: [
+            { text: 'Iceland', correct: false },
+            { text: 'Vatican City', correct: true },
+            { text: 'Nauru', correct: false },
+        ]
+    },
+    {
+        question: `Which is the southernmost city in the world?`,
+        answers: [
+            { text: 'Melbourne', correct: false },
+            { text: 'Lesotho', correct: false },
+            { text: 'Ushuaia', correct: true },
         ]
     }
-]
 
-// EventListerners
+];
 
-restartBtn.addEventListener('click', restart);
-nextBtn.addEventListener('click', next);
-submitBtn.addEventListener('click', submit);
+const facts = [{
+    fact: 'Russia covers an area of 17 100 000 km2'
+},
+{
+    fact: 'There are 54 countries in Africa'
+},
+{
+    fact: `Canberra is Australia's largest inland city and the eighth largest Australian city overall.`
+},
 
-//Game starter with true/false button parameters
+
+];
+
+//Get elements from the DOM
+
+const questionElement = document.getElementById('question');
+const answerButtons = document.getElementById('answer-buttons');
+const nextButton = document.getElementById('next-button');
+const factArea = document.getElementById('info-holder');
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+//Start the quiz
 function runGame() {
-    currentQuestion = 0;
-    questionText.innerHTML = questions[currentQuestion].question;
-    trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
-    trueBtn.onclick = () => {
-        let ano = 0;
-        if (questions[currentQuestion].answers[ano].answer) {
-            if (score < 3) {
-                score++;
-            }
+    currentQuestionIndex = 0;
+    score = 0;
+    nextButton.innerHTML = "Next";
+    showQuestion();
+}
+
+//Question and answers
+function showQuestion() {
+    resetState();
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.innerHTML = currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerButtons.appendChild(button);
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
         }
-        userScore.innerHTML = score;
-        if (currentQuestion < 2) {
-            next();
-        }
-    };
-    falseBtn.innerHTML = questions[currentQuestion].answers[1].option;
-    falseBtn.onclick = () => {
-        let ano = 1;
-        if (questions[currentQuestion].answers[ano].answer) {
-            if (score < 3) {
-                score++;
-            }
-        }
-        userScore.innerHTML = score;
-        if (currentQuestion < 2) {
-            next();
-        }
+        button.addEventListener("click", selectAnswer);
+    });
+}
+
+function resetState() {
+    nextButton.style.display = "none";
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild);
     }
 }
-runGame();
 
-//reset at gamestart
-function restart() {
-    currentQuestion = 0;
-    nextBtn.classList.remove('hide');
-    submitBtn.classList.remove('hide');
-    trueBtn.classList.remove('hide');
-    falseBtn.classList.remove('hide');
-    score = 0;
-    userScore.innerHTML = score;
-    runGame();
+//Parameters for correct/incorrect answers
+function selectAnswer(i) {
+    const selectedBtn = i.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    if (isCorrect) {
+        selectedBtn.classList.add("correct");
+        score++;
+    } else {
+        selectedBtn.classList.add("incorrect");
+    }
+    Array.from(answerButtons.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct");
+        }
+        button.disabled = true;
+    });
+    nextButton.style.display = "block";
 }
+
+//Score when quiz is finished
+function showScore() {
+    resetState();
+    questionElement.innerHTML = `Score: ${score
+        } `;
+    nextButton.innerHTML = "Play Again";
+    nextButton.style.display = "block";
+}
+
+
+//Next-button
+function handleNextButton() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+        showScore();
+    }
+}
+
+nextButton.addEventListener("click", () => {
+    if (currentQuestionIndex < questions.length) {
+        handleNextButton();
+    } else {
+        runGame();
+    }
+});
+
+runGame();
