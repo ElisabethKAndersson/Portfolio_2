@@ -57,7 +57,7 @@ The live link can be found here -
 
 I looked through several quiz tutorals before building this page. I wanted to make a quiz with buttons and had already built the html like that. I found one that covered the functions I needed and used that to help build the javascript functions: <https://www.youtube.com/watch?v=PBcqGxrr9g8>.
 
-Due to illness and doctors appoinments in the beginning of the project for me, I ended up working very intensly at the end and at strange hours. Therefore I was only able to schedule 1 start up meeting with my mentor. He gave me some good start up advice. It would have been good to have the remaining two mentor sessions too.
+Due to illness and doctors appoinments in the beginning of the project for me, I ended up working very intensly at the end and at strange hours. Therefore I was only able to schedule 1 start up meeting with my mentor, Jubril Akolade. He gave me some good start up advice. It would have been good to have the remaining two mentor sessions too.
 
 ### Content
 
