@@ -42,6 +42,14 @@ const questions = [
             { text: 'Lesotho', correct: false },
             { text: 'Ushuaia', correct: true },
         ]
+    },
+    {
+        question: `Which is the biggest ocean in the world?`,
+        answers: [
+            { text: 'Pacific Ocean', correct: true },
+            { text: 'Atlantic Ocean', correct: false },
+            { text: 'Indian Ocean', correct: false },
+        ]
     }
 
 ];
