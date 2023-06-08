@@ -94,6 +94,7 @@ header {
     text-align: left;
 }
 
+/*Next-button styling */
 #next-button {
     background-color: #7DCD85;
     padding: 10px;
@@ -101,6 +102,7 @@ header {
     border-radius: 5px;
 }
 
+/*Answer buttons reaction to correct and incorrect answer*/
 .correct {
     background: #7DCD85;
 

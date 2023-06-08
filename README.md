@@ -19,17 +19,13 @@ When the user has answered all questions a calculated score will show in the qui
 
 ### Features Left to Implement
 
-It would have been nice to have a pop up area with some information about the right answer. It would also be nice if there could be a high score function on the page.
+It would have been nice to have a pop up area with some information about the right answer as well as a high score function on the page. The quiz could also use even more questions to keep the quiz interesting.
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+I have tested both correct and incorrect answers in the quiz, next button and "play again"-function.
+I have gone through all the different ipad and phone types in google inpect and have made adjustments.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ### Validator Testing
 
