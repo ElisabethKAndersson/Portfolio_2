@@ -52,7 +52,6 @@ const questions = [
 const questionElement = document.getElementById('question');
 const answerButtons = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-button');
-const factArea = document.getElementById('info-holder');
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -69,7 +68,7 @@ function runGame() {
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
+
     questionElement.innerHTML = currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {

@@ -122,7 +122,6 @@ header {
 
     .quiz {
         max-width: 80%;
-        min-width: none;
         border-radius: 15px;
         max-height: 600px;
         padding: 5px;
@@ -131,19 +130,16 @@ header {
 
     .answer-buttons {
         max-width: 80%;
-        min-width: none;
         margin: 0 auto;
     }
 
     #heading-text {
         padding: 25px;
-        min-width: none;
         font-size: 32px;
     }
 
     #question {
         padding: 3px 3px;
-        min-width: none;
     }
 }
 
@@ -151,7 +147,7 @@ header {
 
     .btn {
         padding: 5px 1px;
-        margin: 3 0 auto;
+        margin: 3px 0;
         text-align: center;
     }
 
@@ -159,8 +155,6 @@ header {
         margin: 0 auto;
         padding: 0;
         max-width: 350px;
-        min-width: none;
-
     }
 
     #heading-text {
